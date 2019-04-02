@@ -1,0 +1,76 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>news app</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+ul.demo {
+    list-style-type: none;
+    margin: 10;
+    padding: 10;
+}
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+  justify-content: space-between;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+
+}
+
+
+</style>
+</head>
+<body>
+
+	<div class="jumbotron text-center">
+		<h2 class="display-4">News App</h2>
+		<p class="lead">For a Better World</p>
+		
+	</div>
+	 {% for article in articles %}
+	 	 <div class="flex-container">
+	 	 	<div class="row">
+	 	 		<section>
+	 	 		<ul class="demo">
+	 	 		<li>
+	 	 			<div class="col-sm-6">
+	 	 				<p>
+	 	 					<a href="{{article['url'] }}">
+	 	 			<img src="{{ article['urlToImage'] }}" height="200" width="300">
+	 	 				</p>	 	 			
+	 	 			<p>{{ article['title'] }}</p> 			 
+	 	 			</a>
+	 	 			</div>
+	 	 			<div class="col-sm-6">
+	 	 				<p>
+	 	 					{{ article['description']}}
+	 	 				</p>
+	 	 				<p>
+	 	 					{{ article['publishedAt']}}
+	 	 				</p>
+	 	 				<p>&copy; {{article['source']['name']}}<p>
+	 	 				 	 		
+	 	 			</div>	
+	 	 		</li>
+	 	 	</ul>
+	 	 	</section>
+	 	 	</div>	 	 	
+	 	 </div>
+	 	 	
+	 	 
+	 	 
+	 	  
+	 	 	
+	 	  
+	 {% endfor %}
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+<html>
+<head>
+	 
+	<meta charset="UTF-8">
+	<title>News App</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="static/css/modern-business.css" rel="stylesheet"> -->
+
+     
+
+    
+
+<link rel="shortcut icon" href="favicon.ico">
+  <!-- Google Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic|Roboto:400,300,700' rel='stylesheet' type='text/css'>
+  <!-- Animate -->
+  <link rel="stylesheet" href= "{{url_for('static',filename='css/animate.css' )}}" >
+  <!-- Icomoon -->
+  <link rel="stylesheet" href= "{{url_for('static',filename='css/icomoon.css' )}}">
+  <!-- Bootstrap  -->
+  <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css' )}}">
+
+  <link rel="stylesheet" href= "{{url_for('static',filename='css/style.css' )}}" >
+
+
+  <!-- Modernizr JS -->
+  <script src="js/modernizr-2.6.2.min.js"></script>
+	
+</head>
+<body>
+
+	
+
+
+	 <div class="container">
+	 	<h2 class="my-4"> News sub-catogery</h2>
+	 	<div class="row">
+	 		{% block content %} 		
+	 		 {% endblock %}
+	 	</div>	 		
+	 </div>
+
+	 <div class="container">
+	 	<h2>Trending News </h2>
+	 	<div class="row">
+		{% for article in articles %}
+        <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
+        <figure>
+          <a href="{{article['url'] }}"><img src="{{ article['urlToImage']}}" alt="No Image" class="img-responsive" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png';"></a>
+        </figure>        
+        <h2 class="fh5co-article-title"><a href={{article['url'] }}">{{ article['title'] }}</a></h2>
+        
+      </article>
+        {% endfor %}
+	</div>
+	 </div>
+
+	<!-- jQuery -->
+  <script src="static/js/jquery.min.js"></script>
+  <!-- jQuery Easing -->
+  <script src="static/js/jquery.easing.1.3.js"></script>
+  <!-- Bootstrap -->
+  <script src="static/js/bootstrap.min.js"></script>
+  <!-- Waypoints -->
+  <script src="static/js/jquery.waypoints.min.js"></script>
+  <!-- Main JS -->
+  <script src="static/js/main.js"></script>
+
+
+	
+</body>
+</html>
+

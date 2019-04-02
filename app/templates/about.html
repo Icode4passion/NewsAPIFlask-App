@@ -1,0 +1,110 @@
+
+
+<html>
+<head>
+	 
+	<meta charset="UTF-8">
+	<title>About</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="{{url_for('static',filename = 'vendor/bootstrap/css/bootstrap.min.css')}}">
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="static/css/modern-business.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/modern-business.css' )}}"> 
+
+	
+</head>
+<body>
+	<!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('news_us')}}">US News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('about')}}">About</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('contacts')}}">Contacts</a>
+            </li>  
+
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('contacts')}}">Blog</a>
+            </li>
+            
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">People News
+        <small>Subheading</small>
+      </h1>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{url_for('news_india')}}">Home</a>
+        </li>
+        <li class="breadcrumb-item active">About</li>
+      </ol>
+
+      <!-- Intro Content -->
+      <div class="row">
+        <div class="col-lg-6">
+          <img class="img-fluid rounded mb-4" src="http://www.allrightsmagazine.com/wp-content/uploads/2018/04/Online-News-At-A-Glance-new.jpg" alt="News">
+        </div>
+        <div class="col-lg-6">
+          <h2>People News</h2>
+          <p>Search worldwide news with code</p>
+          <p>Get breaking news headlines, and search for articles from over 30,000 news sources and blogs with our news API</p>
+          <p>News API is great as a data source for news tickers and other applications where you want to show your users live headlines. We track headlines in 7 categories across over 50 countries, and at over a hundred top publications and blogs, in near real time</p>
+        </div>
+      </div>
+       
+
+      
+
+    </div>
+    <!-- /.container -->
+
+    {{articles}}
+
+    
+
+</body>
+
+{{article}}
+
+
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+</body>
+</html>

@@ -1,0 +1,47 @@
+   
+
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="static/css/modern-business.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/modern-business.css' )}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename = 'vendor/bootstrap/css/bootstrap.min.css')}}"> 
+
+
+<body>  
+
+
+<div class="d-flex justify-content-center align-items-center container ">  
+   <div class="row ">
+        <form method="POST">
+            <div class="form-group">
+            	 <h3>What's the Weather like ?</h3>
+                <label for="inputWeather" class="control-label">Enter Pincode</label>
+                <input type="text" class="form-control" name="town" placeholder="Please Enter valid Pincode">                
+            </div>
+            <div class="form-group">
+            	<button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+            </div>
+            <div class="form-group">            	
+            		 
+            		<h5>Temperature in {{weather.city}} is 
+            		{{weather.temperature}}&#8451</h5>
+            		<p><img src="http://openweathermap.org/img/w/{{ weather.icon }}.png"> {{weather.description}}</p>  
+			 </div>
+			 
+        </form>
+        
+    </div>
+</div>
+	 
+
+	<script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	 
+</body>
+
+
+  
+  
+	
+ 
